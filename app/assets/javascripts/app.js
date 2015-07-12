@@ -6,11 +6,11 @@
 			$routeProvider
 			.when('/locations',
 			{
-				templateUrl: <%=asset_path "/assets/home.html" %>,
+				templateUrl:  "assets/home.html",
 			})
 			.when('/',
 			{
-				templateUrl: <%=asset_path "/assets/home.html" %>,
+				templateUrl:  "assets/home.html",
 			});
 			$locationProvider.html5Mode(true);
 		}]);

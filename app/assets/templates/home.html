@@ -1,0 +1,44 @@
+    
+    <div class="container" ng-controller="MapController as mapCtrl" ng-init="mapCtrl.index()">
+    
+        <div class="row center-text">
+<h1>Maps</h1>
+
+</div>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<h5>
+		This map shows the transactions that have location data.  You can filter by the transaction type or by the individual.  The size of the circles correspond to the relative size of the "charge/earning" amount.</h5>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-4 border-pane">
+		<h3>Filters</h3>
+		<md-divider></md-divider>
+ <md-subheader>Transaction Type</md-subheader>
+ 	<md-list>
+<md-list-item>
+<md-radio-group class="md-primary" ng-model="mapCtrl.defaultTransactionType">
+<md-radio-button class="filter-on" value="All">All</md-radio-button>
+<md-radio-button class="filter-on" value="Charge">Charge</md-radio-button>
+<md-radio-button class="filter-on" value="Earning">Earning</md-radio-button>
+</md-radio-group>
+</md-list-item>
+</md-list>
+<md-divider></md-divider>
+<md-list>
+ <md-list-item>
+ <select class="btn dropdown-toggle name-filter">
+ 	<option value="">All Names</option>
+ <option ng-repeat="n in mapCtrl.users" value="{{n.name}}">{{n.name}}</option>
+</select>
+ </md-list-item>
+</md-list>
+
+ </div>
+ <div class="col-md-8">
+ 		<map id="map" data="mapCtrl.transactions"></map>
+ </div>
+
+        </div>
+    </div>

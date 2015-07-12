@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Created at</th>
+      <th>User</th>
+      <th>Transaction type</th>
+      <th>Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vtransactions.each do |vtransaction| %>
+      <tr>
+        <td><%= vtransaction.id %></td>
+        <td><%= vtransaction.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transaction', new_transaction_path %>
